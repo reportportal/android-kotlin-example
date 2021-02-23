@@ -1,12 +1,9 @@
 package com.epam.test.android.espresso.junit5
 
-import android.content.Context
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.platform.app.InstrumentationRegistry
-import com.epam.reportportal.junit5.ReportPortalExtension
 import com.epam.test.R
 import com.epam.test.ui.login.LoginActivity
 import de.mannodermaus.junit5.ActivityScenarioExtension
