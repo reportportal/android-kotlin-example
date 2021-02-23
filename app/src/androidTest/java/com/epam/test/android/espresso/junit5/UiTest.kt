@@ -1,9 +1,11 @@
 package com.epam.test.android.espresso.junit5
 
+import android.content.Context
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.platform.app.InstrumentationRegistry
 import com.epam.reportportal.junit5.ReportPortalExtension
 import com.epam.test.R
 import com.epam.test.ui.login.LoginActivity
@@ -13,9 +15,8 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.junit.jupiter.api.extension.RegisterExtension
 
-@ExtendWith(ReportPortalExtension::class)
+@ExtendWith(AndroidReportPortalExtension::class)
 class UiTest {
-
     @JvmField
     @RegisterExtension
     val scenarioExtension = ActivityScenarioExtension.launch<LoginActivity>()
