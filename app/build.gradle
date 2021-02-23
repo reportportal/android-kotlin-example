@@ -73,12 +73,15 @@ dependencies {
 
     implementation 'androidx.multidex:multidex:2.0.1'
 
-    implementation ('com.epam.reportportal:agent-java-junit5:5.1.0-ALPHA-6') {
+    androidTestImplementation ('com.epam.reportportal:agent-java-junit5:5.1.0-ALPHA-6') {
         exclude group: 'org.aspectj'
         exclude group: 'org.apache.tika'
         exclude group: 'org.junit.jupiter'
     }
-    implementation 'org.apache.tika:tika:1.19'
+    androidTestImplementation 'org.apache.tika:tika:1.19'
+    androidTestImplementation ('com.epam.reportportal:logger-java-logback:5.0.3') {
+        exclude group: 'com.epam.reportportal'
+    }
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
