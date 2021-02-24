@@ -1,2 +1,4 @@
-include ':app'
 rootProject.name = "Test"
+
+include ':app'
+include ':junit5'

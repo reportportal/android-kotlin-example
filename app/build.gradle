@@ -1,15 +1,7 @@
-buildscript {
-    dependencies {
-        classpath "de.mannodermaus.gradle.plugins:android-junit5:1.7.1.1"
-    }
-}
-
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
-
-apply plugin: "de.mannodermaus.android-junit5"
 
 android {
     compileSdkVersion 30
@@ -40,23 +32,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
-    }
-    testOptions {
-        unitTests.all {
-            useJUnitPlatform()
-        }
-        animationsDisabled=true
-        junitPlatform {
-            instrumentationTests.integrityCheckEnabled = false
-        }
-    }
-    packagingOptions {
-        exclude "META-INF/LICENSE*"
-    }
-    sourceSets {
-        debug {
-            resources.includes = [ 'reportportal.properties' ]
-        }
     }
 }
 
