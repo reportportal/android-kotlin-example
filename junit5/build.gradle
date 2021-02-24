@@ -4,8 +4,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion = rootProject.compileSdkVersion.toInteger()
+    buildToolsVersion = rootProject.buildToolsVersion
 
     targetProjectPath ':app'
 
@@ -37,6 +37,9 @@ android {
     }
     packagingOptions {
         exclude "META-INF/LICENSE*"
+    }
+    testOptions {
+        animationsDisabled=true
     }
 }
 
