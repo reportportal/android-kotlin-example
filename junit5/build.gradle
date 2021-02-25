@@ -3,6 +3,10 @@ plugins {
     id 'kotlin-android'
 }
 
+repositories {
+    maven { url "http://dl.bintray.com/epam/reportportal" }
+}
+
 android {
     compileSdkVersion = rootProject.compileSdkVersion.toInteger()
     buildToolsVersion = rootProject.buildToolsVersion
