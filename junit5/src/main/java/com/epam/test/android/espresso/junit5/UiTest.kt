@@ -9,11 +9,12 @@ import com.epam.test.ui.login.LoginActivity
 import de.mannodermaus.junit5.ActivityScenarioExtension
 import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 import org.junit.jupiter.api.extension.RegisterExtension
+import org.slf4j.LoggerFactory
 
-@ExtendWith(AndroidReportPortalExtension::class)
 class UiTest {
+    private val logger = LoggerFactory.getLogger(UiTest::class.java)
+
     @JvmField
     @RegisterExtension
     val scenarioExtension = ActivityScenarioExtension.launch<LoginActivity>()
@@ -21,10 +22,12 @@ class UiTest {
     @Test
     fun test_short_password_error() {
         val scenario = scenarioExtension.scenario
+        logger.info("Starting UI test")
         Espresso.onView(ViewMatchers.withId(R.id.username)).perform(ViewActions.typeText("Steve"))
         Espresso.onView(ViewMatchers.withId(R.id.password)).perform(ViewActions.typeText("test"))
         Espresso.onView(ViewMatchers.withId(R.id.login)).perform(ViewActions.click())
         Espresso.onView(ViewMatchers.withId(R.id.password))
             .check(ViewAssertions.matches(ViewMatchers.hasErrorText(Matchers.equalTo("Password must be >5 characters"))))
+        logger.info("UI test finished")
     }
 }
