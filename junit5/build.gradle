@@ -46,7 +46,7 @@ android {
 }
 
 dependencies {
-    implementation project(':app')
+    implementation project(':app') // your application project
 
     // Standard android libraries
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
