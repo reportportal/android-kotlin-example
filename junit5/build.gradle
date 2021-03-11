@@ -63,7 +63,7 @@ dependencies {
         exclude group: 'org.aspectj' // AspectJ is already included by Android
     }
     implementation ('com.epam.reportportal:logger-java-logback:5.0.3') {
-        exclude group: 'com.epam.reportportal'
+        exclude group: 'com.epam.reportportal' // Already included by the agent dependency
     }
 
     // Logging support
